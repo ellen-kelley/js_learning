@@ -1,27 +1,29 @@
-var day = prompt("Enter day of the week:");
-
+var day = prompt("Enter day of the week:").toLowerCase();
+var res;
 switch (day) {
-    case "Monday":
-        console.log("Երկուշաբթի");
-        break;
-    case "Tuesday":
-        console.log("Երեքշաբթի");
-        break;
-    case "Wednesday":
-        console.log("Չորեքշաբթի");
-        break;
-    case "Thursday":
-        console.log("Հինգշաբթի");
-        break;
-    case "Friday":
-        console.log("Ուրբաթ");
-        break;
-    case "Saturday":
-        console.log("Շաբաթ");
-        break;
-    case "Sunday":
-        console.log("Կիրակի");
-        break;
-    default:
-        console.log("Invalid data.");
+  case "Monday":
+    res = "Երկուշաբթի";
+    break;
+  case "Tuesday":
+    res = "Երեքշաբթի";
+    break;
+  case "Wednesday":
+    res = "Չորեքշաբթի";
+    break;
+  case "Thursday":
+    res = "Հինգշաբթի";
+    break;
+  case "Friday":
+    res = "Ուրբաթ";
+    break;
+  case "Saturday":
+    res = "Շաբաթ";
+    break;
+  case "Sunday":
+    res = "Կիրակի";
+    break;
+  default:
+    res = "Invalid data.";
 }
+
+console.log(res)
