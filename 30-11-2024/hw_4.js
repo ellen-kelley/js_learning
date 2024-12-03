@@ -12,10 +12,11 @@ const cars = [
 
 const safeCars = [];
 const speedingCars = [];
+const maxSpeed = 120;
 
 for (let i = 0; i < cars.length; i++) {
 	const { model, speed } = cars[i];
-	if (speed <= 120) {
+	if (speed <= maxSpeed) {
 		safeCars.push({ model, speed });
 	} else {
 		speedingCars.push({ model, speed });
