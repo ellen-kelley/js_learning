@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="create-card-container">
+            <section id="card" class="card">
+                <div class="front-card">
+                    <div id="logo-card" class="logo-card"></div>
+                    <img src="./images/chip.png" alt="Chip" title="Chip" class="chip">
+
+                    <div class="info-card-front">
+                        <div id="group-number-card" class="group-number-card">
+                            <p class="label-card">
+                                Card Number
+                            </p>
+
+                            <p class="number-card">
+                                #### #### #### ####
+                            </p>
+                        </div>
+
+                        <div class="flexbox">
+                            <div id="group-name-card" class="group-name-card">
+                                <p class="label-card">
+                                    Cardholder Name
+                                </p>
+
+                                <p class="name-card">
+                                    John Doe
+                                </p>
+                            </div>
+
+                            <div id="group-expiration-card" class="group-expiration-card">
+                                <p class="label-card">
+                                    Expiration
+                                </p>
+
+                                <p class="expiration-card">
+                                    <span class="month-expiration-card">
+                                        MM
+                                    </span>
+                                    /
+                                    <span class="year-expiration-card">
+                                        YY
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <form action="javascript:void(0);" id="form-card" class="form-card active">
+                <div>
+                    <label for="type-card-form">
+                        Card Type
+                    </label>
+
+                    <div class="group-select">
+                        <select id="card-type" title="card type" required>
+                            <option disabled selected>
+                                Choose card type:
+                            </option>
+                            <option>Classic</option>
+                            <option>Gold</option>
+                            <option>Platinum</option>
+                        </select>
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <label for="number-card-form">
+                        Card Number
+                    </label>
+
+                    <input type="text" id="number-card-form" maxlength="19" autocomplete="off" required>
+                </div>
+
+                <div>
+                    <label for="name-card-form">
+                        Name
+                    </label>
+
+                    <input type="text" id="name-card-form" maxlength="20" autocomplete="off" required>
+                </div>
+
+                <div class="flexbox">
+                    <div class="group-expiration-card-form">
+                        <label for="month-expiration-card-form">
+                            Expiration
+                        </label>
+
+                        <div class="flexbox">
+
+                            <input type="text" id="month-expiration-card-form" maxlength="2" autocomplete="off"
+                                placeholder="Month" required>
+                            <input type="text" id="year-expiration-card-form" maxlength="2" autocomplete="off"
+                                placeholder="Year" required>
+                        </div>
+                    </div>
+
+                    <div class="group-ccv-card-form">
+                        <label for="ccv-card-form">
+                            CCV
+                        </label>
+
+                        <input type="password" id="ccv-card-form" maxlength="3" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-send-form-card">
+                    Create card
+                </button>
+            </form>
+        </div>
+        <div class="all-cards-container">
+
+            <h1>All cards</h1>
+
+            <div class="all-cards-grid">
+                <div id="card" class="card">
+                    <div class="front-card">
+                        <button type="button" class="activate-block-btn">Activate</button>
+                        <div class="card-type">Classic</div>
+                        <img src="./images/chip.png" alt="Chip" title="Chip" class="chip">
+
+                        <div class="info-card-front">
+                            <div id="group-number-card" class="group-number-card">
+                                <p class="label-card">
+                                    Card Number
+                                </p>
+
+                                <p class="number-card">
+                                    #### #### #### ####
+                                </p>
+                            </div>
+
+                            <div class="flexbox">
+                                <div id="group-name-card" class="group-name-card">
+                                    <p class="label-card">
+                                        Cardholder Name
+                                    </p>
+
+                                    <p class="name-card">
+                                        John Doe
+                                    </p>
+                                </div>
+
+                                <div id="group-expiration-card" class="group-expiration-card">
+                                    <p class="label-card">
+                                        Expiration
+                                    </p>
+
+                                    <p class="expiration-card">
+                                        <span class="month-expiration-card">
+                                            MM
+                                        </span>
+                                        /
+                                        <span class="year-expiration-card">
+                                            YY
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="card" class="card">
+                    <div class="front-card">
+                        <button type="button" class="activate-block-btn">Activate</button>
+
+                        <div class="card-type">Gold</div>
+                        <img src="./images/chip.png" alt="Chip" title="Chip" class="chip">
+
+                        <div class="info-card-front">
+                            <div id="group-number-card" class="group-number-card">
+                                <p class="label-card">
+                                    Card Number
+                                </p>
+
+                                <p class="number-card">
+                                    #### #### #### ####
+                                </p>
+                            </div>
+
+                            <div class="flexbox">
+                                <div id="group-name-card" class="group-name-card">
+                                    <p class="label-card">
+                                        Cardholder Name
+                                    </p>
+
+                                    <p class="name-card">
+                                        John Doe
+                                    </p>
+                                </div>
+
+                                <div id="group-expiration-card" class="group-expiration-card">
+                                    <p class="label-card">
+                                        Expiration
+                                    </p>
+
+                                    <p class="expiration-card">
+                                        <span class="month-expiration-card">
+                                            MM
+                                        </span>
+                                        /
+                                        <span class="year-expiration-card">
+                                            YY
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>

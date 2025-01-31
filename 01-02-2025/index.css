@@ -1,0 +1,304 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*:focus {
+	outline: 0;
+}
+
+html {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	background-color: #ddeefc;
+	font-family: "Lato", sans-serif;
+}
+.body-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.create-card-container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	/* margin: auto;
+	max-width: 1000px; */
+	padding: 40px;
+	width: 40%;
+	justify-content: center;
+	height: 100vh;
+}
+
+.card {
+	color: #ffffff;
+	max-width: 550px;
+	position: relative;
+	transform: rotateY(0);
+	transform-style: preserve-3d;
+	transition: transform 0.3s ease;
+	width: 100%;
+	z-index: 3;
+}
+
+.card.active {
+	transform: rotateY(180deg);
+}
+
+.card > div {
+	border-radius: 15px;
+	box-shadow: 0 10px 10px rgba(90, 116, 148, 0.3);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 315px;
+	padding: 30px;
+}
+
+.card .front-card {
+	background: url(./images/card.jpg) #000000 0 0 / cover no-repeat scroll;
+	width: 100%;
+}
+
+.card .front-card .logo-card {
+	height: 50px;
+	text-align: right;
+}
+
+.card .front-card .logo-card img {
+	height: 100%;
+	max-width: 100px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.card .front-card .chip {
+	margin-bottom: 20px;
+	max-width: 50px;
+	width: 100%;
+}
+
+.card .front-card .info-card-front .label-card {
+	color: #7d8994;
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
+
+.card .front-card .info-card-front .group-number-card .number-card,
+.card .front-card .info-card-front .group-name-card .name-card {
+	color: #ffffff;
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+.card .front-card .info-card-front .flexbox {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.form-card {
+	background-color: #ffffff;
+	border-radius: 10px;
+	bottom: 100px;
+	padding: 150px 30px 40px 30px;
+	max-width: 700px;
+	position: relative;
+	transition: clip-path 0.3s ease-in-out;
+	width: 100%;
+	z-index: 2;
+}
+
+.form-card label {
+	color: #7d8994;
+	display: block;
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
+
+.form-card input,
+.form-card select,
+.form-card .btn-send-form-card {
+	border: 2px solid #ced6e0;
+	border-radius: 5px;
+	font-size: 18px;
+	height: 50px;
+	padding: 5px 12px;
+	transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, outline 0.3s ease-in-out;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.form-card input.group-name-card {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.form-card select {
+	appearance: none;
+}
+
+.form-card input:hover,
+.form-card input:active,
+.form-card select:hover,
+.form-card select:active {
+	border-color: #93bded;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+	box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+	outline: #000000;
+}
+
+.form-card .flexbox {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.form-card {
+	width: 100%;
+}
+
+.form-card .group-select {
+	margin-right: 1rem;
+	position: relative;
+	width: 100%;
+}
+
+.form-card .group-select i {
+	color: #ced6e0;
+	position: absolute;
+	right: 1rem;
+	top: 18px;
+	transition: color 0.3s ease;
+	font-weight: 900;
+}
+
+.form-card .flexbox .group-expiration-card-form {
+	width: 100%;
+}
+
+.form-card .group-select:hover i,
+.form-card .group-select:focus i,
+.form-card .group-select:active i {
+	color: #93bfed;
+}
+
+.form-card .btn-send-form-card {
+	background-color: #2364d2;
+	box-shadow: 2px 2px 10px rgba(0, 85, 212, 0.4);
+	border-style: none;
+	margin-top: 15px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 22px;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+}
+
+.form-card .btn-send-form-card:hover,
+.form-card .btn-send-form-card:focus,
+.form-card .btn-send-form-card:active {
+	background-color: #1850b1;
+}
+
+@media screen and (max-width: 550px) {
+	.card > div {
+		min-height: 200px;
+		padding: 15px 15px;
+	}
+
+	.card .front-card .logo-card {
+		position: absolute;
+		right: 10px;
+	}
+
+	.card .front-card .logo-card img {
+		max-width: 75px;
+	}
+
+	.card .front-card .chip {
+		max-width: 35px;
+		margin-top: 10px;
+	}
+
+	.card .front-card .info-card-front .label-card {
+		font-size: 14px;
+	}
+
+	.card .front-card .info-card-front .group-number-card .number-card,
+	.card .front-card .info-card-front .group-name-card .name-card,
+	.card .front-card .info-card-front .group-expiration-card,
+	.expiration-card {
+		font-size: 18px;
+	}
+
+	.form-card .flexbox {
+		flex-direction: column;
+	}
+
+	.form-card select {
+		margin-bottom: 1rem;
+	}
+}
+
+.all-cards-container {
+	width: 60%;
+	min-height: 100vh;
+}
+
+.all-cards-container h1 {
+	text-align: center;
+	padding-top: 30px;
+}
+
+.all-cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-gap: 40px;
+	padding: 40px;
+}
+.all-cards-container .card {
+	/* aspect-ratio: 16 / 9; */
+	min-height: 200px;
+}
+
+.all-cards-container .card .front-card {
+	padding-top: 0;
+}
+
+.all-cards-container .card .front-card .card-type {
+	text-align: right;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.all-cards-container .card .activate-block-btn {
+	border-radius: 5px;
+	font-size: 18px;
+	height: 50px;
+	margin-bottom: 20px;
+	display: inline-block;
+	cursor: pointer;
+	background-color: #12a13d;
+	box-shadow: 2px 2px 10px rgba(0, 85, 212, 0.4);
+	border-style: none;
+	margin-top: 15px;
+	color: #ffffff;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+}
+
+.all-cards-container .card .activate-block-btn:hover,
+.all-cards-container .card .activate-block-btn:focus,
+.all-cards-container .card .activate-block-btn:active {
+	background-color: #058f2e;
+}
