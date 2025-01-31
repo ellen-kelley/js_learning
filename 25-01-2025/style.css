@@ -1,0 +1,92 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	background: #222 url("./images/background.jpg") no-repeat center / 100%;
+	font-size: 120%;
+}
+
+body::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(15, 16, 28, 0.5);
+	pointer-events: none;
+	z-index: -1;
+}
+
+.card {
+	background: #000000d0;
+	color: white;
+	padding: 2em;
+	border-radius: 30px;
+	width: 100%;
+	max-width: 420px;
+	margin: 1em;
+}
+
+.search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 40px;
+}
+
+button {
+	margin: 0.5em;
+	padding: 10px 30px;
+	border-radius: 20px;
+	border: none;
+	outline: none;
+	background: #7c7c7c2b;
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+	border: none;
+	outline: none;
+	padding: 0.4em 1em;
+	border-radius: 24px;
+	background: #7c7c7c2b;
+	color: white;
+	font-family: inherit;
+	font-size: 105%;
+	width: calc(100% - 100px);
+}
+
+input.guess-bar {
+	border: none;
+	outline: none;
+	padding: 0.4em 1em;
+	border-radius: 24px;
+	background: #7c7c7c2b;
+	color: white;
+	font-family: inherit;
+	font-size: 105%;
+	width: calc(100% - 100px);
+}
+
+button:hover {
+	background: #7c7c7c6b;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.description {
+	text-transform: capitalize;
+	margin-left: 8px;
+}
