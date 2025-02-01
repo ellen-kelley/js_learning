@@ -30,6 +30,7 @@ Card.prototype.block = function () {
 // Card
 const card = document.querySelector("#card");
 const logoCard = document.getElementById("logo-card");
+const typeCard = document.querySelector(".card-type");
 const numberCard = document.querySelector("#card .number-card");
 const nameCard = document.querySelector("#card .name-card");
 const monthExpirationCard = document.querySelector("#card .month-expiration-card");
@@ -48,7 +49,7 @@ const createButtonForm = document.querySelector("btn-send-form-card");
 // Card type
 typeCardForm.addEventListener("change", function (event) {
 	const selectedValue = event.target.value;
-	console.log("Card Type:", selectedValue);
+	typeCard.innerText = selectedValue;
 });
 
 // Card Number
@@ -134,4 +135,57 @@ formCard.addEventListener("submit", function (event) {
 	console.log("All Cards:", cards);
 
 	formCard.reset();
+	displayCard(newCard, cards.length - 1);
+	numberCard.textContent = "#### #### #### ####";
+	nameCard.textContent = "John Doe";
+	monthExpirationCard.textContent = "MM";
+	yearExpirationCard.textContent = "YY";
+	ccvCard.textContent = "";
+	logoCard.innerHTML = "";
 });
+
+function displayCard(card, index) {
+	const gridContainer = document.querySelector(".all-cards-grid");
+
+	const cardDiv = document.createElement("div");
+	cardDiv.classList.add("card");
+
+	cardDiv.innerHTML = `
+            <div class="front-card">
+                <button type="button" class="activate-block-btn">Activate</button>
+                <div class="card-type">${card.type}</div>
+                <img src="./images/chip.png" alt="Chip" title="Chip" class="chip">
+
+                <div class="info-card-front">
+                    <div class="group-number-card">
+                        <p class="label-card">Card Number</p>
+                        <p class="number-card">${card.cardNumber}</p>
+                    </div>
+
+                    <div class="flexbox">
+                        <div class="group-name-card">
+                            <p class="label-card">Cardholder Name</p>
+                            <p class="name-card">${card.cardName}</p>
+                        </div>
+
+                        <div class="group-expiration-card">
+                            <p class="label-card">Expiration</p>
+                            <p class="expiration-card">
+                                <span class="month-expiration-card">${card.date.split("/")[0]}</span> /
+                                <span class="year-expiration-card">${card.date.split("/")[1]}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+	const activateButton = cardDiv.querySelector(".activate-block-btn");
+	activateButton.addEventListener("click", function () {
+		cards[index].isActive = !cards[index].isActive;
+		activateButton.textContent = cards[index].isActive ? "Block" : "Activate";
+		activateButton.classList.toggle("blocked", cards[index].isActive);
+	});
+
+	gridContainer.appendChild(cardDiv);
+}

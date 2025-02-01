@@ -112,6 +112,7 @@ body {
 	transition: clip-path 0.3s ease-in-out;
 	width: 100%;
 	z-index: 2;
+	margin-bottom: -100px;
 }
 
 .form-card label {
@@ -266,19 +267,18 @@ body {
 	padding: 40px;
 }
 .all-cards-container .card {
-	/* aspect-ratio: 16 / 9; */
 	min-height: 200px;
 }
 
-.all-cards-container .card .front-card {
+.card .front-card {
 	padding-top: 0;
 }
 
-.all-cards-container .card .front-card .card-type {
+.card .front-card .card-type {
 	text-align: right;
-    font-size: 24px;
-    font-weight: 600;
-    font-style: italic;
+	font-size: 24px;
+	font-weight: 600;
+	font-style: italic;
 }
 
 .all-cards-container .card .activate-block-btn {
@@ -297,8 +297,22 @@ body {
 	transition: background-color 0.3s ease;
 }
 
+.all-cards-container .card .activate-block-btn {
+	background-color: #12a13d;
+}
+
 .all-cards-container .card .activate-block-btn:hover,
 .all-cards-container .card .activate-block-btn:focus,
 .all-cards-container .card .activate-block-btn:active {
 	background-color: #058f2e;
+}
+
+.all-cards-container .card .activate-block-btn.blocked {
+	background-color: #e60f0f;
+}
+
+.all-cards-container .card .activate-block-btn.blocked:hover,
+.all-cards-container .card .activate-block-btn.blocked:focus,
+.all-cards-container .card .activate-block-btn.blocked:active {
+	background-color: #c30e0e;
 }
